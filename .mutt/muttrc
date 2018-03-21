@@ -1,0 +1,61 @@
+# Sets up mail box in your home folder  
+set mbox_type=maildir  
+set mbox="~/mail/inbox"  
+set spoolfile="~/mail/inbox"  
+set folder="~/mail"  
+set record="~/mail/sent"  
+set postponed="~/mail/postponed"  
+set alias_file="~/.mutt/aliases"
+
+#Go to gmail
+source ~/.mutt/gmail
+folder-hook $folder 'source ~/.mutt/gmail'
+
+#Lee la base de datos de alias
+source ~/.mutt/aliases
+ 
+#My Editor  
+#set editor='vim + -c "set textwidth=72" -c "set wrap" -c "set nocp" -c "?^$"'  
+set editor="nano +7"
+
+#Special Keybindings  
+bind editor <space>	noop
+bind attach <return>	view-mailcap
+macro index gi "<change-folder>=INBOX<enter>" "Go to inbox"  
+macro index ga "<change-folder>=[Gmail]/All Mail<enter>" "Go to all mail"  
+macro index gs "<change-folder>=[Gmail]/Sent Mail<enter>" "Go to Sent Mail"  
+macro index gd "<change-folder>=[Gmail]/Drafts<enter>" "Go to drafts"
+#Open gmail with f2 and f3 for hotmail
+macro index,pager <f2> '<sync-mailbox><enter-command>source ~/.mutt/gmail<enter><change-folder>!<enter>'
+macro index,pager <f3> '<sync-mailbox><enter-command>source ~/.mutt/hotmail<enter><change-folder>!<enter>'
+#Mutt Session Security  
+set move = no #Stop asking to "move read messages to mbox"!  
+set imap_keepalive = 900  
+# Colors  
+color hdrdefault cyan default  
+color attachment yellow default  
+color header brightyellow default "From: "  
+color header brightyellow default "Subject: "  
+color header brightyellow default "Date: "  
+color quoted green default  
+color quoted1 cyan default  
+color quoted2 green default  
+color quoted3 cyan default  
+color error   red       default     # error messages  
+color message  white      default     # message informational messages  
+color indicator white      red       # indicator for the "current message"  
+color status  white      blue      # status lines in the folder index sed for the mini-help line  
+color tree   red       default     # the "tree" display of threads within the folder index  
+color search  white      blue      # search matches found with search within the internal pager  
+color markers  red       default     # The markers indicate a wrapped line  
+color index   yellow default '~O'  
+color index   yellow default '~N'  
+color index   brightred    default '~F'  # Flagged Messages are important!  
+color index   blue default  '~D'      # Deleted Mails - use dark color as these are already "dealt with"  
+# identifies email addresses  
+color body  brightred black [\-\.+_a-zA-Z0-9]+@[\-\.a-zA-Z0-9]+  
+# identifies URLs  
+color body  brightblue black (https?|ftp)://[\-\.,/%~_:?&=\#a-zA-Z0-9]+
+auto_view text/html                                      # view html automatically
+alternative_order text/plain text/enriched text/html     # save html for last
+

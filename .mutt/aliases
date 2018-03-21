@@ -1,0 +1,3 @@
+# El formato para la creación de alias es este
+#
+# alias nombre-corto nombre completo <usuario@dominio.com>

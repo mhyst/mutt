@@ -1,0 +1,17 @@
+#Gmail account info  
+set from = "usuario2@hotmail.com"  
+set realname = "Nombre Completo"  
+set imap_user = "usuario2@hotmail.com"  
+set imap_pass = "contraseña"
+#Folders  
+#Remote Folders  
+set folder = "imaps://imap-mail.outlook.com:993"  
+set spoolfile = "+INBOX"  
+set postponed ="+[Gmail]/Drafts"  
+#Local Folders  
+set header_cache =~/.mutt/cache/usuario2.headers  
+set message_cachedir =~/.mutt/cache/usuario2.bodies  
+set certificate_file =~/.mutt/usuario2.certificates  
+#SMTP Setup  
+set smtp_url = "smtp://usuario2@smtp-mail.outlook.com:587/"  
+set smtp_pass = "contraseña"

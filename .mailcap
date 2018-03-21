@@ -1,0 +1,6 @@
+# $Id$
+
+text/html; /usr/bin/w3m -cols 90 -dump -T text/html '%s'; copiousoutput
+image/gif; xv %s
+image/jpg; display %s
+application/pgp-keys; pgp -f < %s ; copiousoutput

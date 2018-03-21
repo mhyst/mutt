@@ -1,0 +1,19 @@
+#Gmail account info  
+set from = "usuario@gmail.com"  
+set realname = "Nombre completo"  
+set imap_user = "usuario@gmail.com"  
+set imap_pass = "contraseña"
+#Folders  
+#Remote Folders  
+set folder = "imaps://imap.gmail.com:993"  
+set spoolfile = "+INBOX"  
+set postponed ="+[Gmail]/Drafts"  
+#Local Folders  
+set header_cache =~/.mutt/cache/usuario.headers  
+set message_cachedir =~/.mutt/cache/usuario.bodies  
+set certificate_file =~/.mutt/usuario.certificates  
+#SMTP Setup  
+set smtp_url = "smtp://usuario@smtp.gmail.com:587/"  
+set smtp_pass = "contraseña"  
+
+set sort_browser=alpha    # Sort mailboxes by alpha(bet)
